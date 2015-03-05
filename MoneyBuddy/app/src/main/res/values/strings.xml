@@ -4,7 +4,11 @@
     <string name="items">Item</string>
     <string name="cost">Cost</string>
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
     <string name="add_to_list">Add to List</string>
     <string name="item_hint">Add an Item</string>
     <string name="cost_hint">Add the Cost</string>
+=======
+    <string name="title_activity_general_budgeting">GeneralBudgeting</string>
+>>>>>>> 921d247591aa9486db6f3a8f63cd5115912362a2
 </resources>

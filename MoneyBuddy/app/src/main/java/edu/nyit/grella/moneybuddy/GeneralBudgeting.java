@@ -1,43 +1,24 @@
 package edu.nyit.grella.moneybuddy;
 
-import android.content.Intent;
-<<<<<<< HEAD
-=======
 import android.support.v7.app.ActionBarActivity;
->>>>>>> 921d247591aa9486db6f3a8f63cd5115912362a2
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 
-public class HomeScreen extends ActionBarActivity {
+public class GeneralBudgeting extends ActionBarActivity {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_screen);
-    }
-
-<<<<<<< HEAD
-    public void wishlistbtnOnClick(View v) {
-        Button wishlistbtn = (Button) v;
-        startActivity(new Intent(getApplicationContext(), Wishlist.class));
-=======
-    public void GeneralBudgetingButton (View v) {
-        //Go to General Budgeting page
-        Button GeneralBudgeting = (Button) v;
-        startActivity(new Intent(getApplicationContext(), GeneralBudgeting.class));
->>>>>>> 921d247591aa9486db6f3a8f63cd5115912362a2
+        setContentView(R.layout.activity_general_budgeting);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_home_screen, menu);
+        getMenuInflater().inflate(R.menu.menu_general_budgeting, menu);
         return true;
     }
 
