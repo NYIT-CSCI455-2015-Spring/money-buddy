@@ -17,19 +17,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
 
         <activity
             android:name=".Wishlist"
             android:label="Wish list" >
         </activity>
 
-=======
         <activity
             android:name=".GeneralBudgeting"
             android:label="@string/title_activity_general_budgeting" >
         </activity>
->>>>>>> 921d247591aa9486db6f3a8f63cd5115912362a2
     </application>
 
 </manifest>
