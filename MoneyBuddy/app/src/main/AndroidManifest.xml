@@ -29,6 +29,11 @@
         </activity>
 
         <activity
+            android:name=".GenBudCalculate"
+            android:label="@string/title_activity_gen_bud_calculate" >
+        </activity>
+
+        <activity
             android:name=".SavedSpent"
             android:label="SavedSpent" >
         </activity>
@@ -42,6 +47,7 @@
             android:name=".SavingsHistory"
             android:label="SavingsHistory" >
         </activity>
+
     </application>
 
 </manifest>
