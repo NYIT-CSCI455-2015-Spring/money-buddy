@@ -28,6 +28,23 @@ public class HomeScreen extends ActionBarActivity {
         startActivity(new Intent(getApplicationContext(), GeneralBudgeting.class));
     }
 
+    public void SavedSpentButton (View v) {
+        //Go to General Budgeting page
+        Button SavedSpentbtn = (Button) v;
+        startActivity(new Intent(getApplicationContext(), SavedSpent.class));
+    }
+    public void PocketMoneyButton (View v) {
+        //Go to General Budgeting page
+        Button PocketMoneybtn = (Button) v;
+        startActivity(new Intent(getApplicationContext(), PocketMoney.class));
+    }
+
+    public void SavingsHistoryButton (View v) {
+        //Go to General Budgeting page
+        Button SavingsHistorybtn = (Button) v;
+        startActivity(new Intent(getApplicationContext(), SavingsHistory.class));
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -27,6 +27,21 @@
             android:name=".GeneralBudgeting"
             android:label="@string/title_activity_general_budgeting" >
         </activity>
+
+        <activity
+            android:name=".SavedSpent"
+            android:label="SavedSpent" >
+        </activity>
+
+        <activity
+            android:name=".PocketMoney"
+            android:label="PocketMoney" >
+        </activity>
+
+        <activity
+            android:name=".SavingsHistory"
+            android:label="SavingsHistory" >
+        </activity>
     </application>
 
 </manifest>
