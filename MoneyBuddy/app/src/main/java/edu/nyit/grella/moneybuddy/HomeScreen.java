@@ -45,6 +45,12 @@ public class HomeScreen extends ActionBarActivity {
         startActivity(new Intent(getApplicationContext(), SavingsHistory.class));
     }
 
+    public void CalendarButton (View v) {
+        //Go to General Budgeting page
+        Button Calendarbtn = (Button) v;
+        startActivity(new Intent(getApplicationContext(), Calendar.class));
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -48,6 +48,11 @@
             android:label="SavingsHistory" >
         </activity>
 
+        <activity
+            android:name=".Calendar"
+            android:label="Calendar" >
+        </activity>
+
     </application>
 
 </manifest>

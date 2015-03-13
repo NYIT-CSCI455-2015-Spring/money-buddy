@@ -51,7 +51,9 @@
         android:text="Calendar"
         android:id="@+id/calendar"
         android:layout_below="@+id/savings_history"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:onClick="CalendarButton" />
 
     <Button
         android:layout_width="wrap_content"
