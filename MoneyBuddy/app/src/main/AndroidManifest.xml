@@ -53,6 +53,16 @@
             android:label="Calendar" >
         </activity>
 
+        <activity
+            android:name=".PredictedSavings"
+            android:label="PredictedSavings" >
+        </activity>
+
+        <activity
+            android:name=".DailyExpenses"
+            android:label="DailyExpenses" >
+        </activity>
+
     </application>
 
 </manifest>

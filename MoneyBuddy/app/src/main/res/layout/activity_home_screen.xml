@@ -61,7 +61,9 @@
         android:text="Predicted Savings"
         android:id="@+id/predicted_savings"
         android:layout_below="@+id/calendar"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:onClick="PredictedSavingsButton" />
 
     <Button
         android:layout_width="wrap_content"
@@ -71,7 +73,7 @@
         android:layout_below="@+id/predicted_savings"
         android:layout_centerHorizontal="true"
         android:clickable="true"
-        android:onClick="wishlistbtnOnClick" />
+        android:onClick="WishlistButton" />
 
     <Button
         android:layout_width="wrap_content"
@@ -79,7 +81,9 @@
         android:text="Daily Expenses"
         android:id="@+id/daily_expenses"
         android:layout_below="@+id/wish_list"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:onClick="DailyExpensesButton" />
 
     <Button
         android:layout_width="wrap_content"

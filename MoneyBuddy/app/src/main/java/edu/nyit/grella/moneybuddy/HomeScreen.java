@@ -17,7 +17,7 @@ public class HomeScreen extends ActionBarActivity {
         setContentView(R.layout.activity_home_screen);
     }
 
-    public void wishlistbtnOnClick(View v) {
+    public void WishlistButton(View v) {
         Button wishlistbtn = (Button) v;
         startActivity(new Intent(getApplicationContext(), Wishlist.class));
     }
@@ -49,6 +49,18 @@ public class HomeScreen extends ActionBarActivity {
         //Go to General Budgeting page
         Button Calendarbtn = (Button) v;
         startActivity(new Intent(getApplicationContext(), Calendar.class));
+    }
+
+    public void PredictedSavingsButton (View v) {
+        //Go to General Budgeting page
+        Button PredictedSavingsbtn = (Button) v;
+        startActivity(new Intent(getApplicationContext(), PredictedSavings.class));
+    }
+
+    public void DailyExpensesButton (View v) {
+        //Go to General Budgeting page
+        Button DailyExpensesbtn = (Button) v;
+        startActivity(new Intent(getApplicationContext(), DailyExpenses.class));
     }
 
 
