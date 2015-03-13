@@ -1,11 +1,14 @@
 package edu.nyit.grella.moneybuddy;
 
-import android.content.Intent;
+import android.app.ListActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.preference.PreferenceManager;
+import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,23 +20,20 @@ import java.util.ArrayList;
 /**
  * Created by Anthony Bertolino on 2/27/2015.
  */
-public class Wishlist extends ActionBarActivity implements View.OnClickListener {
+public class Wishlist extends ListActivity {
 
     TextView itemTextView;
     TextView costTextView;
 
     Button addButton;
+    Button deleteButton;
 
     EditText itemEditText;
     EditText costEditText;
 
-    ListView itemListView;
-    ArrayAdapter iArrayAdapter;
-    ArrayList iNameList = new ArrayList();
-
-    ListView costListView;
-    ArrayAdapter cArrayAdapter;
-    ArrayList cNameList = new ArrayList();
+    ListView listView;
+    ArrayAdapter adapter;
+    protected static ArrayList arrayList = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,35 +47,29 @@ public class Wishlist extends ActionBarActivity implements View.OnClickListener 
         costTextView = (TextView) findViewById(R.id.cost_textView);
         costTextView.setText("cost");
 
-        // 2. Access the Button defined in layout XML
+        // 2. Access the Buttons defined in layout XML
         // and listen for it here
         addButton = (Button) findViewById(R.id.add_button);
-        addButton.setOnClickListener(this);
+        addButton.setOnClickListener(listener);
+
+        deleteButton = (Button) findViewById(R.id.delete_button);
+        deleteButton.setOnClickListener(listenerDel);
 
         // 3. Access the EditTexts defined in layout XML
         itemEditText = (EditText) findViewById(R.id.item_edittext);
         costEditText = (EditText) findViewById(R.id.cost_edittext);
 
-        // 4. Access the ListViews
-        itemListView = (ListView) findViewById(R.id.item_listView);
-        costListView = (ListView) findViewById(R.id.cost_listView);
+        // 4. Access the ListView
+        listView = (ListView) findViewById(android.R.id.list);
 
-        // Create ArrayAdapters for the ListViews
-        iArrayAdapter = new ArrayAdapter(this,
-                        android.R.layout.simple_list_item_1,
-                        iNameList);
-        cArrayAdapter = new ArrayAdapter(this,
-                        android.R.layout.simple_list_item_1,
-                        cNameList);
+        // Create ArrayAdapters for the ListView
+        adapter = new ArrayAdapter(this,
+                        android.R.layout.simple_list_item_multiple_choice,
+                arrayList);
 
         // Set the ListViews to use the ArrayAdapter
-        itemListView.setAdapter(iArrayAdapter);
-        costListView.setAdapter(cArrayAdapter);
-    }
-
-    public void homebtnOnClick(View v) {
-        Button homebtn = (Button) v;
-        startActivity(new Intent(getApplicationContext(), HomeScreen.class));
+        listView.setAdapter(adapter);
+        LoadPreferences();
     }
 
     @Override
@@ -100,17 +94,55 @@ public class Wishlist extends ActionBarActivity implements View.OnClickListener 
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View v) {
-        // Take what was typed into the EditTexts
-        // and use in the TextViews
-        itemTextView.setText("Item");
-        costTextView.setText("Cost");
+    // Defining a click event listener for the button "Add"
+    OnClickListener listener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // Take what was typed into the EditTexts
+            // and use in the TextViews
+            itemTextView.setText("Item");
+            costTextView.setText("Cost");
 
-        // Also add that value to the lists shown in the ListViews
-        iNameList.add(itemEditText.getText().toString());
-        iArrayAdapter.notifyDataSetChanged();
-        cNameList.add("$" + costEditText.getText().toString());
-        cArrayAdapter.notifyDataSetChanged();
+            String row = itemEditText.getText().toString() + "     $" + costEditText.getText().toString();
+
+            // Also add that value to the lists shown in the ListViews
+            arrayList.add(row);
+            adapter.notifyDataSetChanged();
+            SavePreferences("LIST", row);
+        }
+    };
+
+    // Defining a click event listener for the button "Delete"
+    OnClickListener listenerDel = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // Getting the checked items from the listview
+            SparseBooleanArray checkedItemPositions = getListView().getCheckedItemPositions();
+            int itemCount = getListView().getCount();
+
+            for (int i=itemCount-1; i >= 0; i--){
+                if (checkedItemPositions.get(i)) {
+                    adapter.remove(arrayList.get(i));
+                }
+            }
+            checkedItemPositions.clear();
+            adapter.notifyDataSetChanged();
+        }
+    };
+
+    protected void SavePreferences(String key, String value) {
+        SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = data.edit();
+        editor.putString(key, value);
+        editor.commit();
     }
+
+    protected void LoadPreferences() {
+        SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
+        String dataSet = data.getString("LIST", "None Available");
+
+        adapter.add(dataSet);
+        adapter.notifyDataSetChanged();
+    }
+
 }
