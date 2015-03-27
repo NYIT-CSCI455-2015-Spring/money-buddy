@@ -23,7 +23,6 @@ import java.util.ArrayList;
 public class Wishlist extends ListActivity {
 
     TextView itemTextView;
-    TextView costTextView;
 
     Button addButton;
     Button deleteButton;
@@ -33,7 +32,7 @@ public class Wishlist extends ListActivity {
 
     ListView listView;
     ArrayAdapter adapter;
-    protected static ArrayList arrayList = new ArrayList();
+    protected static ArrayList<String> arrayList = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +42,7 @@ public class Wishlist extends ListActivity {
         // 1. Access the TextViews defined in layout XML
         // and then set its text
         itemTextView = (TextView) findViewById(R.id.item_textView);
-        itemTextView.setText("item");
-        costTextView = (TextView) findViewById(R.id.cost_textView);
-        costTextView.setText("cost");
+        itemTextView.setText("Items");
 
         // 2. Access the Buttons defined in layout XML
         // and listen for it here
@@ -64,7 +61,7 @@ public class Wishlist extends ListActivity {
 
         // Create ArrayAdapters for the ListView
         adapter = new ArrayAdapter(this,
-                        android.R.layout.simple_list_item_multiple_choice,
+                android.R.layout.simple_list_item_multiple_choice,
                 arrayList);
 
         // Set the ListViews to use the ArrayAdapter
@@ -101,14 +98,14 @@ public class Wishlist extends ListActivity {
             // Take what was typed into the EditTexts
             // and use in the TextViews
             itemTextView.setText("Item");
-            costTextView.setText("Cost");
 
-            String row = itemEditText.getText().toString() + "     $" + costEditText.getText().toString();
+            String row = itemEditText.getText().toString() + "\n$" + costEditText.getText().toString();
 
             // Also add that value to the lists shown in the ListViews
+            arrayList.toString();
             arrayList.add(row);
+            SavePreferences();
             adapter.notifyDataSetChanged();
-            SavePreferences("LIST", row);
         }
     };
 
@@ -130,18 +127,27 @@ public class Wishlist extends ListActivity {
         }
     };
 
-    protected void SavePreferences(String key, String value) {
+    protected void SavePreferences() {
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = data.edit();
-        editor.putString(key, value);
+        editor.putInt("Status_size", arrayList.size());
+
+        for (int i=0; i<arrayList.size(); i++){
+            arrayList.remove("Status_" + i);
+            editor.putString("Status_" + i, arrayList.get(i));
+        }
+
         editor.commit();
     }
 
     protected void LoadPreferences() {
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
-        String dataSet = data.getString("LIST", "None Available");
+        arrayList.clear();
+        int size = data.getInt("Status_size", 0);
 
-        adapter.add(dataSet);
+        for (int i=0; i<size; i++) {
+            arrayList.add(data.getString("Status_" + i, null));
+        }
         adapter.notifyDataSetChanged();
     }
 
