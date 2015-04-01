@@ -21,29 +21,19 @@
         android:id="@+id/general_budgeting"
         android:layout_below="@+id/home_textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="5dp"
         android:clickable="true"
         android:onClick="GeneralBudgetingButton" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pocket Money"
-        android:id="@+id/pocket_money"
-        android:layout_below="@+id/saved_spent"
-        android:layout_centerHorizontal="true"
-        android:clickable="true"
-        android:onClick="PocketMoneyButton"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Savings History"
         android:id="@+id/savings_history"
-        android:layout_below="@+id/pocket_money"
         android:layout_centerHorizontal="true"
         android:clickable="true"
-        android:onClick="SavingsHistoryButton"/>
+        android:onClick="SavingsHistoryButton"
+        android:layout_below="@+id/saved_spent" />
 
     <Button
         android:layout_width="wrap_content"
@@ -58,22 +48,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Predicted Savings"
-        android:id="@+id/predicted_savings"
-        android:layout_below="@+id/calendar"
-        android:layout_centerHorizontal="true"
-        android:clickable="true"
-        android:onClick="PredictedSavingsButton" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Wish list"
         android:id="@+id/wish_list"
-        android:layout_below="@+id/predicted_savings"
         android:layout_centerHorizontal="true"
         android:clickable="true"
-        android:onClick="WishlistButton" />
+        android:onClick="WishlistButton"
+        android:layout_below="@+id/calendar" />
 
     <Button
         android:layout_width="wrap_content"
