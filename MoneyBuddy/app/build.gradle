@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 apply plugin: 'com.android.application'
 
 android {
@@ -25,31 +24,3 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.roomorama:caldroid:1.1.8'
 }
-=======
-apply plugin: 'com.android.application'
-
-android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
-
-    defaultConfig {
-        applicationId "edu.nyit.grella.moneybuddy"
-        minSdkVersion 16
-        targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-}
-
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.jjoe64:graphview:4.0.0'
-}
->>>>>>> fbc10adf1f4add4262a50fd8e0992d00225c6ef2

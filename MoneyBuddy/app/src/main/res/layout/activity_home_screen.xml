@@ -19,27 +19,31 @@
         android:layout_height="wrap_content"
         android:text="General Budgeting"
         android:id="@+id/general_budgeting"
-<<<<<<< HEAD
-=======
         android:layout_below="@+id/home_textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
->>>>>>> a330190d95edfd195ea42d6335af6a6640659f8e
+        android:layout_marginTop="41dp"
         android:clickable="true"
-        android:onClick="GeneralBudgetingButton"
-        android:layout_below="@+id/home_textView"
-        android:layout_alignLeft="@+id/predicted_savings"
-        android:layout_alignStart="@+id/predicted_savings" />
+        android:onClick="GeneralBudgetingButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pocket Money"
+        android:id="@+id/pocket_money"
+        android:layout_below="@+id/saved_spent"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:onClick="PocketMoneyButton"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Savings History"
         android:id="@+id/savings_history"
+        android:layout_below="@+id/pocket_money"
         android:layout_centerHorizontal="true"
         android:clickable="true"
-        android:onClick="SavingsHistoryButton"
-        android:layout_below="@+id/saved_spent" />
+        android:onClick="SavingsHistoryButton"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -54,12 +58,22 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wish list"
-        android:id="@+id/wish_list"
+        android:text="Predicted Savings"
+        android:id="@+id/predicted_savings"
+        android:layout_below="@+id/calendar"
         android:layout_centerHorizontal="true"
         android:clickable="true"
-        android:onClick="WishlistButton"
-        android:layout_below="@+id/calendar" />
+        android:onClick="PredictedSavingsButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wish list"
+        android:id="@+id/wish_list"
+        android:layout_below="@+id/predicted_savings"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:onClick="WishlistButton" />
 
     <Button
         android:layout_width="wrap_content"

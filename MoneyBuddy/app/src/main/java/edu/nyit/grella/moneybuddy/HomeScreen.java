@@ -33,6 +33,11 @@ public class HomeScreen extends ActionBarActivity {
         Button SavedSpentbtn = (Button) v;
         startActivity(new Intent(getApplicationContext(), SavedSpent.class));
     }
+    public void PocketMoneyButton (View v) {
+        //Go to General Budgeting page
+        Button PocketMoneybtn = (Button) v;
+        startActivity(new Intent(getApplicationContext(), PocketMoney.class));
+    }
 
     public void SavingsHistoryButton (View v) {
         //Go to General Budgeting page
@@ -44,6 +49,12 @@ public class HomeScreen extends ActionBarActivity {
         //Go to General Budgeting page
         Button Calendarbtn = (Button) v;
         startActivity(new Intent(getApplicationContext(), CalendarBuddy.class));
+    }
+
+    public void PredictedSavingsButton (View v) {
+        //Go to General Budgeting page
+        Button PredictedSavingsbtn = (Button) v;
+        startActivity(new Intent(getApplicationContext(), PredictedSavings.class));
     }
 
     public void DailyExpensesButton (View v) {
