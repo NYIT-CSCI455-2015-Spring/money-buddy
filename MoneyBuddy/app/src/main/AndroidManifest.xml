@@ -49,7 +49,7 @@
         </activity>
 
         <activity
-            android:name=".Calendar"
+            android:name=".CalendarBuddy"
             android:label="Calendar" >
         </activity>
 
