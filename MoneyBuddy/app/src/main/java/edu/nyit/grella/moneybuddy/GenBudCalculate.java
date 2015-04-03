@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 public class GenBudCalculate extends ActionBarActivity {
 
-    double GenBudMoneySaved;
-    double GenBudIfYouSpend;
+    static double GenBudMoneySaved;
+    static double GenBudIfYouSpend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +27,13 @@ public class GenBudCalculate extends ActionBarActivity {
         GenBudIfYouSpend = GeneralBudgeting.cMoneyValue - GenBudMoneySaved;
 
         TextView IfYouSpendOutput = (TextView) findViewById(R.id.textView);
-        IfYouSpendOutput.setText(GenBudIfYouSpend + "");
+        IfYouSpendOutput.setText("$" + GenBudIfYouSpend);
+
+        TextView CurrentMoneyOutput = (TextView) findViewById(R.id.textView10);
+        CurrentMoneyOutput.setText("$" + GeneralBudgeting.cMoneyValue);
 
         TextView MoneySavedOutput = (TextView) findViewById(R.id.textView7);
-        MoneySavedOutput.setText(GenBudMoneySaved + "");
+        MoneySavedOutput.setText("$" + GenBudMoneySaved);
     }
 
     public void HomeButton (View v) {

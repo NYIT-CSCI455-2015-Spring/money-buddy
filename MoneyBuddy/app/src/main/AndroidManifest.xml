@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.nyit.grella.moneybuddy" >
+    package="edu.nyit.grella.moneybuddy"
+    android:versionCode="1"
+    android:versionName="1.00" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-sdk android:minSdkVersion="11" />
 
     <application
         android:allowBackup="true"
@@ -39,11 +44,6 @@
         </activity>
 
         <activity
-            android:name=".PocketMoney"
-            android:label="PocketMoney" >
-        </activity>
-
-        <activity
             android:name=".SavingsHistory"
             android:label="SavingsHistory" >
         </activity>
@@ -51,11 +51,6 @@
         <activity
             android:name=".CalendarBuddy"
             android:label="Calendar" >
-        </activity>
-
-        <activity
-            android:name=".PredictedSavings"
-            android:label="PredictedSavings" >
         </activity>
 
         <activity
