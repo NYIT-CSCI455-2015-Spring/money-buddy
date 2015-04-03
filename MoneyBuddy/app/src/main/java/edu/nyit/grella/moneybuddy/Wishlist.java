@@ -99,7 +99,7 @@ public class Wishlist extends ListActivity {
             // and use in the TextViews
             itemTextView.setText("Item");
 
-            String row = itemEditText.getText().toString() + "\n$" + costEditText.getText().toString();
+            String row = itemEditText.getText().toString() + "          $" + costEditText.getText().toString();
 
             // Also add that value to the lists shown in the ListViews
             arrayList.toString();
