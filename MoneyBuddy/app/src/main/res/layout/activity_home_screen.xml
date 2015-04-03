@@ -19,17 +19,11 @@
         android:layout_height="wrap_content"
         android:text="General Budgeting"
         android:id="@+id/general_budgeting"
-<<<<<<< HEAD
-=======
         android:layout_below="@+id/home_textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
->>>>>>> a330190d95edfd195ea42d6335af6a6640659f8e
         android:clickable="true"
-        android:onClick="GeneralBudgetingButton"
-        android:layout_below="@+id/home_textView"
-        android:layout_alignLeft="@+id/predicted_savings"
-        android:layout_alignStart="@+id/predicted_savings" />
+        android:onClick="GeneralBudgetingButton" />
 
     <Button
         android:layout_width="wrap_content"
